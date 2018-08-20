@@ -2,7 +2,7 @@
 Compare performance between C++ and Python in ROS
 
 # Usage
-Please run the launch files located in the launch directory. The launch files are divided as follow:
+Please run the launch files located in the launch directory. The launch files are divided as follows:
 
 | Publisher | Subscriber | Launch File | 
 |:---------:|:----------:|:-----------:|
