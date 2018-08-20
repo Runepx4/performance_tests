@@ -14,15 +14,18 @@ def performanceCallback_py(data):
     global count
     global last_time
     if (count > data_points):
+        #Calculate the received frequency:
         curr_time = rospy.get_rostime()
         diff_py=curr_time-last_time;
         last_time = curr_time;
         rate_freq = data_points / diff_py.to_sec()
 
+        #"Print" the frequency to the console:
         rospy.loginfo("%s",data.awesome)
         rospy.loginfo("Python Received message at: %#.2f hz (Approximately)", rate_freq)
         rospy.loginfo("----------------------------------------------------")
 
+        #Publish the measured frequency: 
         pub.publish(rate_freq)
         count = 0
 

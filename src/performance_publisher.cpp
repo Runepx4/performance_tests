@@ -16,9 +16,9 @@ int main(int argc, char **argv)
   nhPriv.param<double>("step_time_sec", step_time_sec, 4);
   nhPriv.param<double>("step_size_hz", step_size_hz, 2000.0);
   //Used to plot the frequency in rqt_plot:
-  ros::Publisher frequency_publisher = n.advertise<std_msgs::Float32>("/real_frequency", 1000);
+  ros::Publisher frequency_publisher = n.advertise<std_msgs::Float32>("/real_frequency", 100);
   //performance_pub topic is setup to publish the SuperAwesome message (string):  
-  ros::Publisher performance_pub = n.advertise<performance_tests::SuperAwesome>("performance_pub", 1000.0);
+  ros::Publisher performance_pub = n.advertise<performance_tests::SuperAwesome>("performance_pub", 100);
 
   // update_rate sets the frequency of the publisher:
   double update_rate = start_frequency;

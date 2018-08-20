@@ -19,8 +19,8 @@ def timer_callback(event):
 
 def performance_pub():
     global rate, update_rate
-    pub = rospy.Publisher('performance_pub', SuperAwesome, queue_size=10)
-    freq_pub = rospy.Publisher('/real_frequency', Float32, queue_size=1000)
+    pub = rospy.Publisher('performance_pub', SuperAwesome, queue_size=100)
+    freq_pub = rospy.Publisher('/real_frequency', Float32, queue_size=100)
     rospy.init_node('performance_test', anonymous=False)
 
     #Get private parameters from launch file: 
