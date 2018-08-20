@@ -1,0 +1,13 @@
+<launch>  
+    <node pkg="performance_tests" name="pub_py" type="performance_publisher.py">
+      <param name="start_frequency_hz" value="1000.0" type="double"/>
+      <param name="step_size_hz" value="1000.0" type="double"/>
+      <param name="end_frequency_hz" value="15000.0" type="double"/>
+      <param name="step_time_sec" value="4" type="int"/>
+    </node>
+
+    <node pkg="performance_tests" name="sub_cpp" type="performance_subscriber" output="screen"/>
+
+    <node name="performance_plot" pkg="rqt_plot" type="rqt_plot"
+          args="/measured_frequency /real_frequency" />
+</launch>
